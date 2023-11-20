@@ -10,7 +10,7 @@ def convert_pdf_to_jpeg(pdf_folder, output_path, resolution):
             
             for page_number in range(pdf_document.page_count):
                 page = pdf_document[page_number]
-                image = page.get_pixmap(matrix=fitz.Matrix(resolution/72, resolution/72))
+                image = page.get_pixmap(matrix=fitz.Matrix(resolution/2, resolution/2))
                 
 
                 pil_image = Image.frombytes("RGB", [image.width, image.height], image.samples)
